@@ -1,0 +1,14 @@
+<h1 class="text-5xl text-center underline decoration-1 underline-offset-[20px] mb-2">
+  <%= type.titleize %>
+</h1>
+<div class="flex overflow-x-auto p-[26px] gap-5">
+  <% instance_variable_get("@#{type}").each do |movie| %>
+    <div class="flex-shrink-0 w-[166px] bg-gray-800 custom-shadow rounded-lg pb-5">
+      <img class="rounded-t-md w-full h-full max-h-[250px] object-cover" src="<%= "#{base_image_url}#{movie["poster_path"]}" %>" alt="<%= movie["title"] %>" />
+      <a href="">
+        <h2 class="mx-2 font-semibold text-white"> <%= movie["title"] %> </h2>
+        <small class="mx-2 text-gray-400"><%= movie["release_date"] %></small>
+      </a>
+    </div>
+  <% end %>
+</div>

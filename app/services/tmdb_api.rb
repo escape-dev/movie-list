@@ -24,7 +24,7 @@ class TmdbApi
     { error: e.message }
   end
 
-  def self.now_playing 
-    base_request("/movie/now_playing?language=en-US&page=1")
+  def self.movie(type) 
+    base_request("/movie/#{type}?language=en-US&page=1")
   end
 end
